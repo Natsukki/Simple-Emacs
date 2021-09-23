@@ -1,47 +1,133 @@
+#+TITLE: Emacs Configuration
+#+AUTHOR: Natsukki
+#+EMAIL: natacha.padova@epita.fr
+
+* Configure base editor
+
+** Must-have settings
+
+- Display current time in status bar
+
+#+begin_src emacs-lisp
 (display-time)
+#+end_src
 
+- Automatic parens pairing
+
+#+begin_src emacs-lisp
 (electric-pair-mode)
+#+end_src
 
+- Ask for =y= or =n=, instead of =yes= of =no=
+
+#+begin_src emacs-lisp
 (fset 'yes-or-no-p 'y-or-n-p)
+#+end_src
 
+- Ensure syntax highlighting is enabled
+
+#+begin_src emacs-lisp
 (global-font-lock-mode t)
+#+end_src
 
+- Display line numbers on the side
+
+#+begin_src emacs-lisp
 (global-linum-mode 1)
+#+end_src
 
+- Sane GUI setup
+
+#+begin_src emacs-lisp
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (setq column-number-mode t)
 (setq inhibit-splash-screen t)
+#+end_src
 
+- Disable backup files
+
+#+begin_src emacs-lisp
 (setq make-backup-files nil)
+#+end_src
 
+- Ensure file ends with a newline
+
+#+begin_src emacs-lisp
 (setq require-final-newline t)
+#+end_src
 
+- Highlight matching parenthesis,brace,bracket,etc...
+
+#+begin_src emacs-lisp
 (show-paren-mode t)
 (setq show-pare-delay 0.0)
+#+end_src
 
+- Don't ask before following symlinks
+
+#+begin_src emacs-lisp
 (setq vc-follow-symlinks t)
+#+end_src
 
+- Begin scrolling slightly before the edges
+
+#+begin_src emacs-lisp
 (setq scroll-step 1
       scroll-margin 5)
+#+end_src
 
+- Highlight current line
+
+#+begin_src emacs-lisp
 (global-hl-line-mode)
+#+end_src
 
+- Set fill column to 80
+
+#+begin_src emacs-lisp
 (setq-default fill-column 80)
+#+end_src
 
+** Color scheme
+
+#+BEGIN_SRC emacs-lisp
 (load-theme 'tsdh-dark t)
+#+END_SRC
 
-(setq user-full-name "Your Name"
-      user-mailaddress "your.name@etna.fr")
+* Personal information
 
+#+BEGIN_SRC emacs-lisp
+(setq user-full-name "Natsukki"
+      user-mailaddress "natacha.padova@epita.fr")
+#+END_SRC
+
+
+* Whitespace mode
+
+Highlight trailing whitespaces
+
+#+BEGIN_SRC emacs-lisp
 (global-whitespace-mode 1)
 (setq-default whitespace-style '(face tab-mark lines-tail trailing))
+#+END_SRC
 
+* C-mode configuration
 
+-  Indentation: 4 spaces, aligned braces, to tabs
+
+  #+BEGIN_SRC emacs-lisp
 (setq-default c-default-style "linux"
               c-basic-offset 4
               indent-tabs-mode nil)
+  #+END_SRC
 
+* M-x gdb configuration
+
+Enable many-windows mode
+
+#+begin_src emacs-lisp
 (setq gdb-many-windows t
       gdb-show-main t)
+#+end_src
