@@ -1,0 +1,47 @@
+(display-time)
+
+(electric-pair-mode)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(global-font-lock-mode t)
+
+(global-linum-mode 1)
+
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(setq column-number-mode t)
+(setq inhibit-splash-screen t)
+
+(setq make-backup-files nil)
+
+(setq require-final-newline t)
+
+(show-paren-mode t)
+(setq show-pare-delay 0.0)
+
+(setq vc-follow-symlinks t)
+
+(setq scroll-step 1
+      scroll-margin 5)
+
+(global-hl-line-mode)
+
+(setq-default fill-column 80)
+
+(load-theme 'tsdh-dark t)
+
+(setq user-full-name "Your Name"
+      user-mailaddress "your.name@etna.fr")
+
+(global-whitespace-mode 1)
+(setq-default whitespace-style '(face tab-mark lines-tail trailing))
+
+
+(setq-default c-default-style "linux"
+              c-basic-offset 4
+              indent-tabs-mode nil)
+
+(setq gdb-many-windows t
+      gdb-show-main t)
