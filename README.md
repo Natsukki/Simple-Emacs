@@ -6,7 +6,7 @@ to serve as a sane basis for building your own Emacs configuration.
 
 ## Installation
 
-Delete your existing =.emacs.d= folder then execute the following command:
+Delete your existing `.emacs.d` folder then execute the following command:
 
 ```
 git clone https://github.com/Natsukki/Simple-Emacs.git .emacs.d && emacs
